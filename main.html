@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8'>
+		<title>Note Creation Center</title>
+	</head>
+	<h1 style='text-align-center'>Welcome to the Note Creation Center!</h1>
+	<h2 style='text-align-center'>Please enter the information below to get started with creating your notes!</h2>
+	<form method='POST' action='/notes/<string:name>'>
+		<div class='row'>
+			<div class='column'>
+				<label for='note' class='form-label'>Recently Written</label>
+				<u1>
+					{% for note in notes %}
+					<a href="{{url_for('viewnotes', name=name)}}"
+						target='_blank'><li>{{note['name']}}</li>
+					</a>
+					{%endfor%}
+				</u1>
+			</div>
+		</div>
+	</form>
+	<form method='POST' action='/submit'>
+		<div class='row'>
+			<div class='column'>
+					
+	
